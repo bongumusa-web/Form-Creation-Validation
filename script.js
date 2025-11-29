@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        // Retrieve trimmed values according to instructions
+        //retriving input values
         const username = document.getElementById("username").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let isValid = true;
         let messages = [];
 
-        // Username validation (checker wants: "username.length")
+        // Username validation 
         if (username.length < 3) {
             isValid = false;
             messages.push("Username must be at least 3 characters long.");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("username").style = "border: 2px solid green;";
         }
 
-        // Email validation (checker wants: email includes '@' and '.')
+        // Email validation should include email includes '@' and '.')
         if (!email.includes("@") || !email.includes(".")) {
             isValid = false;
             messages.push("Email should include @ and . characters.");
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("email").style = "border: 2px solid green;";
         }
 
-        // Password validation (checker wants: "password.length")
+        // Password validation 
         if (password.length < 8) {
             isValid = false;
             messages.push("Password must be at least 8 characters long.");
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("password").style = "border: 2px solid green;";
         }
 
-        // Display feedback (only once)
+        // Display feedback 
         feedbackDiv.style.display = "block";
 
         if (isValid) {
